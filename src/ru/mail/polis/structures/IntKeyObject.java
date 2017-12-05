@@ -6,12 +6,12 @@ package ru.mail.polis.structures;
  */
 public interface IntKeyObject<V> extends Comparable<IntKeyObject> {
 
-    int getKey();
+  int getKey();
 
-    V getValue();
+  V getValue();
 
-    @Override
-    default int compareTo(IntKeyObject anotherIntKeyObject) {
-        return Integer.compare(getKey(), anotherIntKeyObject.getKey());
-    }
+  @Override
+  default int compareTo(IntKeyObject anotherIntKeyObject) {
+    return Integer.compare(getKey(), anotherIntKeyObject.getKey());
+  }
 }

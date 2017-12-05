@@ -35,35 +35,35 @@ import ru.mail.polis.sort.SortUtils;
 @Fork(1)
 public class AverageTimeBench {
 
-    int[][] data;
-    int[] curr;
-    int index;
+  int[][] data;
+  int[] curr;
+  int index;
 
-    @Setup(value = Level.Trial)
-    public void setUpTrial() {
-        data = new int[10][100];
-        for (int i = 0; i < 10; i++) {
-            //define arrays here
-            data[i] = SortUtils.generateArray(100);
-        }
+  @Setup(value = Level.Trial)
+  public void setUpTrial() {
+    data = new int[10][100];
+    for (int i = 0; i < 10; i++) {
+      //define arrays here
+      data[i] = SortUtils.generateArray(100);
     }
+  }
 
-    @Setup(value = Level.Invocation)
-    public void setUpInvocation() {
-        curr = Arrays.copyOf(data[index], data[index].length);
-        index = (index + 1) % 10;
-    }
+  @Setup(value = Level.Invocation)
+  public void setUpInvocation() {
+    curr = Arrays.copyOf(data[index], data[index].length);
+    index = (index + 1) % 10;
+  }
 
-    @Benchmark
-    public void measureBubbleSort() {
-        BubbleSort.sort(curr);
-    }
+  @Benchmark
+  public void measureBubbleSort() {
+    BubbleSort.sort(curr);
+  }
 
-    public static void main(String[] args) throws RunnerException {
-        Options opt = new OptionsBuilder()
-                .include(AverageTimeBench.class.getSimpleName())
-                .build();
+  public static void main(String[] args) throws RunnerException {
+    Options opt = new OptionsBuilder()
+        .include(AverageTimeBench.class.getSimpleName())
+        .build();
 
-        new Runner(opt).run();
-    }
+    new Runner(opt).run();
+  }
 }

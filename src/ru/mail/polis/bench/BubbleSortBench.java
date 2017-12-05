@@ -24,26 +24,26 @@ import ru.mail.polis.sort.SortUtils;
 @OutputTimeUnit(TimeUnit.MICROSECONDS)
 public class BubbleSortBench {
 
-    private int[] a;
+  private int[] a;
 
-    @Setup(value = Level.Invocation)
-    public void setUpInvocation() {
-        a = SortUtils.generateArray(1000);
-    }
+  @Setup(value = Level.Invocation)
+  public void setUpInvocation() {
+    a = SortUtils.generateArray(1000);
+  }
 
-    @Benchmark
-    public void measureBubbleSort(Blackhole bh) {
-        bh.consume(BubbleSort.sort(a));
-    }
+  @Benchmark
+  public void measureBubbleSort(Blackhole bh) {
+    bh.consume(BubbleSort.sort(a));
+  }
 
-    public static void main(String[] args) throws RunnerException {
-        Options opt = new OptionsBuilder()
-                .include(BubbleSortBench.class.getSimpleName())
-                .warmupIterations(5)
-                .measurementIterations(5)
-                .forks(1)
-                .build();
+  public static void main(String[] args) throws RunnerException {
+    Options opt = new OptionsBuilder()
+        .include(BubbleSortBench.class.getSimpleName())
+        .warmupIterations(5)
+        .measurementIterations(5)
+        .forks(1)
+        .build();
 
-        new Runner(opt).run();
-    }
+    new Runner(opt).run();
+  }
 }

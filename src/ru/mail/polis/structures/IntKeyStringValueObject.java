@@ -6,27 +6,27 @@ package ru.mail.polis.structures;
  */
 public class IntKeyStringValueObject implements IntKeyObject<String> {
 
-    private final int key;
-    private final String value;
+  private final int key;
+  private final String value;
 
-    public IntKeyStringValueObject(int key, String value) {
-        this.key = key;
-        this.value = value;
-    }
+  public IntKeyStringValueObject(int key, String value) {
+    this.key = key;
+    this.value = value;
+  }
 
-    @Override
-    public String getValue() {
-        return value;
-    }
+  @Override
+  public String getValue() {
+    return value;
+  }
 
-    @Override
-    public int getKey() {
-        return key;
-    }
+  @Override
+  public int getKey() {
+    return key;
+  }
 
-    @Override
-    public String toString() {
-        return "IntKeyStringValueObject{key=" + key + ", value='" + value + "\'}";
-    }
+  @Override
+  public String toString() {
+    return "IntKeyStringValueObject{key=" + key + ", value='" + value + "\'}";
+  }
 
 }

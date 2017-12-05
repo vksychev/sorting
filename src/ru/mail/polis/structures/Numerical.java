@@ -6,20 +6,20 @@ package ru.mail.polis.structures;
  */
 public interface Numerical {
 
-    /**
-     * @param index - порядковый номер разряда
-     * @return Значение index разряда
-     * @throws IndexOutOfBoundsException если такого разряда нет
-     */
-    int getDigit(int index) throws IndexOutOfBoundsException;
+  /**
+   * @param index - порядковый номер разряда
+   * @return Значение index разряда
+   * @throws IndexOutOfBoundsException если такого разряда нет
+   */
+  int getDigit(int index) throws IndexOutOfBoundsException;
 
-    /**
-     * @return Возращается максимальное значение разряда (минимальное значение == 0)
-     */
-    int getDigitMaxValue();
+  /**
+   * @return Возращается максимальное значение разряда (минимальное значение == 0)
+   */
+  int getDigitMaxValue();
 
-    /**
-     * @return Количество разрядов
-     */
-    int getDigitCount();
+  /**
+   * @return Количество разрядов
+   */
+  int getDigitCount();
 }
